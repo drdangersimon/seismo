@@ -96,7 +96,7 @@ lomb_txt32 = '''
     P[i] = 0.5 * (((term0 * term0) / (c_tau2 * cc + cs_tau * cs + s_tau2 * ss)) + ((term1 * term1) / (c_tau2 * ss - cs_tau * cs + s_tau2 * cc)));
   }'''
 
-def lomb_scarge(x, y, f):
+def lomb_scargle(x, y, f):
     ''' lomb scargle periorodgram. If doesn't work try 32 bit version'''
     
     # double precision
@@ -133,7 +133,7 @@ def lomb_scarge(x, y, f):
 
     return pgram
 
-def lomb_scagle32(x, y, f):
+def lomb_scargle32(x, y, f):
     '''single percesion version of lomb-scargle'''
     x = np.float32(x)
     y = np.float32(y)
