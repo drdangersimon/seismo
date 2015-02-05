@@ -97,7 +97,20 @@ lomb_txt32 = '''
   }'''
 
 def lomb_scargle(x, y, f):
-    ''' lomb scargle periorodgram. If doesn't work try 32 bit version'''
+    '''Calculates the Lomb-Scargle periorodgram in parallel using OpenCl. 
+    Inputs:
+        x: numpy array containing timestamps
+        y: numpy array containing measurements
+        f: numpy array containing frequencies at which LS will be
+        calculated
+
+    Returns:
+        Unnormalized Periodogram
+        If doesn't work try 32 bit version
+    Notes: 
+        The Periodogram takes the value (A**2) * N/4 for a 
+        harmonic signal with amplitude A for sufficiently large N.
+    '''
     
     # double precision
     x = np.float64(x)
@@ -134,7 +147,19 @@ def lomb_scargle(x, y, f):
     return pgram
 
 def lomb_scargle32(x, y, f):
-    '''single percesion version of lomb-scargle'''
+        '''Calculates the sigal precision (32 bit) Lomb-Scargle periorodgram in parallel using OpenCl. 
+    Inputs:
+        x: numpy array containing timestamps
+        y: numpy array containing measurements
+        f: numpy array containing frequencies at which LS will be
+        calculated
+
+    Returns:
+        Unnormalized Periodogram
+    Notes: 
+        The Periodogram takes the value (A**2) * N/4 for a 
+        harmonic signal with amplitude A for sufficiently large N.
+    '''
     x = np.float32(x)
     y = np.float32(y)
     f = np.float32(f)
