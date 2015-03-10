@@ -147,7 +147,7 @@ def lomb_scargle(x, y, f):
     return pgram
 
 def lomb_scargle32(x, y, f):
-        '''Calculates the sigal precision (32 bit) Lomb-Scargle periorodgram in parallel using OpenCl. 
+    '''Calculates the sigal precision (32 bit) Lomb-Scargle periorodgram in parallel using OpenCl. 
     Inputs:
         x: numpy array containing timestamps
         y: numpy array containing measurements
